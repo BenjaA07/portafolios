@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#10172a" name="theme-color"/>
+<title>Sobre mí | Benjamín Benítez</title>
+<style>
+    :root {
+      --bg: #0b1020;
+      --panel: rgba(255,255,255,.08);
+      --text: #f4f7ff;
+      --muted: #bdc8df;
+      --blue: #42c6ff;
+      --purple: #9b7bff; 
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(66,198,255,.20), transparent 32rem),
+        radial-gradient(circle at 85% 35%, rgba(155,123,255,.19), transparent 30rem),
+        var(--bg);
+      line-height: 1.6;
+    }
+    header {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 70px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before, header::after {
+      content: "";
+      position: absolute;
+      width: 240px; height: 240px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+    header::before { top: 8%; left: -100px; }
+    header::after { bottom: -120px; right: -60px; animation-delay: -3s; }
+    .hero { max-width: 850px; position: relative; z-index: 1; animation: appear .9s ease both; }
+    .tag {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid rgba(66,198,255,.45);
+      border-radius: 999px;
+      color: #9be3ff;
+      background: rgba(66,198,255,.09);
+      font-size: .9rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin: 22px 0 16px;
+    }
+    h1 span {
+      background: linear-gradient(90deg, var(--blue), #b7a3ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p { color: var(--muted); font-size: 1.15rem; max-width: 620px; margin: 0 auto 28px; }
+    .button {
+      display: inline-block;
+      color: #07111f;
+      background: linear-gradient(100deg, var(--blue), #b7a3ff);
+      padding: 12px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .button:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(66,198,255,.25); }
+    main { width: min(1050px, calc(100% - 36px)); margin: 0 auto 70px; }
+    section {
+      margin: 28px 0;
+      padding: clamp(22px, 4vw, 38px);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: 0 18px 55px rgba(0,0,0,.18);
+      backdrop-filter: blur(12px);
+      animation: appear .8s ease both;
+    }
+    .section-title { margin: 0 0 20px; font-size: clamp(1.6rem, 4vw, 2.2rem); }
+    .section-title span { color: var(--blue); }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; }
+    .about-text { color: var(--muted); font-size: 1.08rem; }
+    .about-text strong { color: var(--text); }
+    .photo {
+      width: 100%; max-width: 290px; justify-self: center;
+      aspect-ratio: 4 / 5; object-fit: cover;
+      border-radius: 20px; border: 2px solid rgba(66,198,255,.55);
+      box-shadow: 0 12px 35px rgba(0,0,0,.35);
+      transition: transform .35s;
+    }
+    .photo:hover { transform: scale(1.035) rotate(1deg); }
+    .interests { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .interest {
+      padding: 9px 14px; border-radius: 12px;
+      background: rgba(66,198,255,.10); border: 1px solid rgba(66,198,255,.22);
+      color: #c9efff;
+    }
+    .jobs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .job-card {
+      overflow: hidden; border-radius: 18px;
+      background: rgba(5,10,25,.45); border: 1px solid rgba(255,255,255,.1);
+      transition: transform .25s, border-color .25s;
+    }
+    .job-card:hover { transform: translateY(-7px); border-color: var(--blue); }
+    .job-card img { display: block; width: 100%; height: 220px; object-fit: cover; }
+    .job-card div { padding: 17px; }
+    .job-card h3 { margin: 0 0 5px; }
+    .job-card p { margin: 0; color: var(--muted); }
+    footer { text-align: center; color: #8998b5; padding: 0 20px 30px; }
+    @keyframes appear { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+    @media (max-width: 700px) {
+      header { min-height: 65vh; }
+      .about-grid, .jobs { grid-template-columns: 1fr; }
+      .photo { max-width: 230px; }
+      .job-card img { height: 190px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+<link href="assets/shared.css" rel="stylesheet"/><style>header{min-height:62vh}@media(max-width:700px){header{min-height:52vh}}</style></head>
+<body><nav aria-label="Menú de la muestra" class="gallery-nav"><a href="index.html"><img alt="" src="assets/logo.png"/>← Todas las biografías</a><span>Diseño Web · UTU Sandú 2</span></nav>
+<header>
+<div class="hero">
+<span class="tag">Mi página personal</span>
+<h1>¡Hola! Soy <span>Benjamín</span></h1>
+<p>Esta es mi biografía. Acá cuento un poco sobre mí, lo que me gusta y lo que quiero hacer en el futuro.</p>
+<a class="button" href="#sobre-mi">Conocé más</a>
+</div>
+</header>
+<main>
+<section id="sobre-mi">
+<div class="about-grid">
+<div>
+<h2 class="section-title">Sobre <span>mí</span></h2>
+<p class="about-text">
+            Soy <strong>Benjamín</strong>, estudiante de UTU Sandú y tengo 15 años.
+            En el futuro me gustaría ser <strong>futbolista</strong> y también
+            <strong>programador especializado en ciberseguridad</strong>.
+            Actualmente me gusta jugar al fútbol y al Free Fire.
+          </p>
+<div class="interests">
+<span class="interest">⚽ Fútbol</span>
+<span class="interest">🎮 Videojuegos</span>
+<span class="interest">💻 Tecnología</span>
+</div>
+</div>
+<img alt="Imagen de referencia elegida para la biografía" class="photo" data-alt="Programación" data-local="assets/code.svg" data-public="https://upload.wikimedia.org/wikipedia/commons/1/17/Laptop_Programmcode.jpg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://i.pinimg.com/736x/32/12/c5/3212c5864aae038929d993ffb35fd7b2.jpg"/>
+</div>
+</section>
+<section id="trabajo">
+<h2 class="section-title">Mi trabajo <span>ideal</span></h2>
+<div class="jobs">
+<article class="job-card">
+<img alt="Fútbol" data-alt="Fútbol" data-local="assets/football.svg" data-public="https://upload.wikimedia.org/wikipedia/commons/1/1e/Soccer_ball_on_ground.jpg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJKN9srjrT-T6y_GyJeCIpO514mw5DpmNTTXhq1R3HFw&amp;s=10"/>
+<div>
+<h3>Futbolista</h3>
+<p>Me gustaría dedicarme al fútbol, entrenar y llegar a jugar profesionalmente.</p>
+</div>
+</article>
+<article class="job-card">
+<img alt="Programación y tecnología" data-alt="Programación" data-local="assets/code.svg" data-public="https://upload.wikimedia.org/wikipedia/commons/1/17/Laptop_Programmcode.jpg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQxmoBICKgpoYGPsVF2F9CodZXfUATD3--7lLBSKtCTPWY7GmzS8hc1NQc&amp;s=10"/>
+<div>
+<h3>Programador de ciberseguridad</h3>
+<p>También me interesa la tecnología y aprender a proteger sistemas y datos.</p>
+</div>
+</article>
+</div>
+</section>
+</main>
+<div class="return-bottom"><a href="index.html">← Volver al menú principal</a></div><footer>Hecho por Benjamín Benítez · Mi página personal</footer><details class="image-credits"><summary>Créditos de imágenes alternativas</summary><p>Se conservan las imágenes originales cuando cargan. Las referencias alternativas de Wikimedia Commons no representan a los estudiantes. Si no hay conexión se muestran ilustraciones locales.</p><ul><li>Programación: <a href="https://commons.wikimedia.org/wiki/File:Laptop_Programmcode.jpg" rel="noopener noreferrer" target="_blank">Laptop Programmcode.jpg</a> · Autor indicado en la ficha · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></li><li>Fútbol: <a href="https://commons.wikimedia.org/wiki/File:Soccer_ball_on_ground.jpg" rel="noopener noreferrer" target="_blank">Soccer ball on ground.jpg</a> · Petey21 · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></li></ul></details>
+<script src="assets/images.js"></script></body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Biografía personal de Nico: estudiante, intereses y sueño de ser futbolista." name="description"/>
+<title>Sobre mí | Nico</title>
+<style>
+    :root {
+      --ink: #f7f7ff;
+      --muted: #d8d8ec;
+      --accent: #ff78b7;
+      --accent-2: #8b7bff;
+      --glass: rgba(255,255,255,.10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 12% 15%, rgba(255,120,183,.28), transparent 32rem),
+        radial-gradient(circle at 90% 80%, rgba(139,123,255,.25), transparent 30rem),
+        linear-gradient(135deg, #10152f, #21183e 55%, #15152e);
+      overflow-x: hidden;
+    }
+    .orb {
+      position: fixed;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      filter: blur(85px);
+      opacity: .18;
+      pointer-events: none;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+    .orb.one { top: 8%; left: -100px; }
+    .orb.two { right: -100px; bottom: 4%; animation-delay: -5s; }
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(.9); }
+      to { transform: translate(45px, -35px) scale(1.2); }
+    }
+    header {
+      width: min(1100px, 92%);
+      margin: auto;
+      padding: 26px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      animation: appear .8s ease both;
+    }
+    .brand { font-weight: 800; letter-spacing: 1px; font-size: 1.15rem; }
+    .brand span { color: var(--accent); }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: .95rem;
+      transition: color .25s;
+    }
+    nav a:hover { color: white; }
+    main { width: min(1000px, 92%); margin: 34px auto 70px; }
+    .hero {
+      text-align: center;
+      padding: 62px 24px 48px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 28px;
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 24px 70px rgba(0,0,0,.25);
+      animation: appear .9s .1s ease both;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 999px;
+      color: #ffe0ef;
+      background: rgba(255,120,183,.15);
+      border: 1px solid rgba(255,120,183,.35);
+      font-size: .82rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 20px 0 14px;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+    h1 span {
+      background: linear-gradient(90deg, #ff9bc9, #b4a8ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .intro {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      line-height: 1.8;
+    }
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+    .card {
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--glass);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 18px 50px rgba(0,0,0,.18);
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+      animation: rise .8s ease both;
+    }
+    .card:nth-child(2) { animation-delay: .18s; }
+    .card:hover {
+      transform: translateY(-9px);
+      border-color: rgba(255,155,201,.6);
+      box-shadow: 0 25px 55px rgba(0,0,0,.3);
+    }
+    .card img {
+      display: block;
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .card:hover img { transform: scale(1.06); }
+    .card-body { padding: 24px; }
+    .number {
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+    h2 { margin: 8px 0 10px; font-size: 1.55rem; }
+    .card p { color: var(--muted); line-height: 1.7; margin: 0; }
+    .quote {
+      margin-top: 26px;
+      padding: 24px;
+      text-align: center;
+      color: #f8e8f1;
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      background: rgba(255,255,255,.07);
+      font-size: 1.05rem;
+    }
+    footer {
+      padding: 25px 15px 35px;
+      text-align: center;
+      color: #aaa9c5;
+      font-size: .9rem;
+    }
+    .top-button {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 46px; height: 46px;
+      border: 0;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 8px 24px rgba(0,0,0,.3);
+      transition: transform .2s;
+    }
+    .top-button:hover { transform: translateY(-4px); }
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 700px) {
+      header { flex-direction: column; }
+      nav a { margin: 0 9px; }
+      .content { grid-template-columns: 1fr; }
+      .hero { padding: 48px 20px 38px; }
+      .card img { height: 220px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+<link href="assets/shared.css" rel="stylesheet"/></head>
+<body><nav aria-label="Menú de la muestra" class="gallery-nav"><a href="index.html"><img alt="" src="assets/logo.png"/>← Todas las biografías</a><span>Diseño Web · UTU Sandú 2</span></nav>
+<div class="orb one"></div>
+<div class="orb two"></div>
+<header>
+<div class="brand">NICO<span>.</span></div>
+<nav aria-label="Navegación principal">
+<a href="#sobre-mi">Sobre mí</a>
+<a href="#mi-meta">Mi meta</a>
+</nav>
+</header>
+<main>
+<section class="hero" id="sobre-mi">
+<span class="eyebrow">Mi biografía</span>
+<h1>Hola, soy <span>Nico</span></h1>
+<p class="intro">
+        Soy estudiante de la UTU Sandú N.º 2, tengo 16 años y en el futuro
+        me gustaría ser futbolista. Esta es una pequeña presentación sobre mí
+        y uno de mis grandes sueños.
+      </p>
+</section>
+<section aria-label="Mi información" class="content">
+<article class="card">
+<img alt="Imagen de referencia elegida para la biografía" data-alt="Fútbol" data-local="assets/football.svg" data-public="https://upload.wikimedia.org/wikipedia/commons/1/1e/Soccer_ball_on_ground.jpg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROjvr7uQ387aC8KrqpkkkSSKBp9UhPfm33hWNwyk2t4Q&amp;s=10"/>
+<div class="card-body">
+<span class="number">01 / SOBRE MÍ</span>
+<h2>Un poco sobre mí</h2>
+<p>Soy Nico, estudiante de la UTU Sandú N.º 2. Tengo 16 años y sigo aprendiendo y pensando en lo que quiero lograr en el futuro.</p>
+</div>
+</article>
+<article class="card" id="mi-meta">
+<img alt="Imagen relacionada con mi trabajo ideal" data-alt="Fútbol" data-local="assets/football.svg" data-public="https://upload.wikimedia.org/wikipedia/commons/1/1e/Soccer_ball_on_ground.jpg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-qo1f_P36BxizKAO90z873cHH0lpTaA7_2u9sivqKrg&amp;s=10"/>
+<div class="card-body">
+<span class="number">02 / MI FUTURO</span>
+<h2>Mi trabajo ideal</h2>
+<p>Mi sueño es llegar a ser futbolista. Me gustaría poder dedicarme al fútbol y convertir esa pasión en mi profesión.</p>
+</div>
+</article>
+</section>
+<div class="quote">“Los grandes sueños empiezan con pequeños pasos.”</div>
+</main>
+<div class="return-bottom"><a href="index.html">← Volver al menú principal</a></div><footer>Hecho por Nico · Mi biografía</footer><details class="image-credits"><summary>Créditos de imágenes alternativas</summary><p>Se conservan las imágenes originales cuando cargan. Las referencias alternativas de Wikimedia Commons no representan a los estudiantes. Si no hay conexión se muestran ilustraciones locales.</p><ul><li>Fútbol: <a href="https://commons.wikimedia.org/wiki/File:Soccer_ball_on_ground.jpg" rel="noopener noreferrer" target="_blank">Soccer ball on ground.jpg</a> · Petey21 · <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></li></ul></details>
+<button aria-label="Volver arriba" class="top-button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" type="button">↑</button>
+<script src="assets/images.js"></script></body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mi biografía | Brandon Da Rosa</title>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #edf5ed;
+            color: #234536;
+        }
+
+        header {
+            background: linear-gradient(135deg, #123c2c, #31865c);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+            animation: aparecer 1s ease;
+        }
+
+        header h1 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px #00000015;
+            animation: subir 1s ease;
+        }
+
+        h2 {
+            color: #24734a;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        section p {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .imagenes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .imagenes img {
+            width: 250px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 18px;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .imagenes img:hover {
+            transform: scale(1.07) rotate(2deg);
+            box-shadow: 0 10px 25px #24734a55;
+        }
+
+        .trabajo {
+            text-align: center;
+        }
+
+        .trabajo img {
+            width: 80%;
+            max-width: 450px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: transform 0.4s;
+        }
+
+        .trabajo img:hover {
+            transform: scale(1.04);
+        }
+
+        footer {
+            background: #123c2c;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes subir {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media(max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            .imagenes img {
+                width: 100%;
+            }
+        }
+    </style>
+<link href="assets/shared.css" rel="stylesheet"/><style>.imagenes img{max-width:100%}.trabajo img{margin-top:12px}.trabajo p{max-width:680px;margin:auto}header h1{font-size:clamp(2rem,5vw,3rem)}</style></head>
+<body><nav aria-label="Menú de la muestra" class="gallery-nav"><a href="index.html"><img alt="" src="assets/logo.png"/>← Todas las biografías</a><span>Diseño Web · UTU Sandú 2</span></nav>
+<header>
+<h1>🌿 ¡Hola! Soy Brandon</h1>
+<p>Bienvenidos a mi biografía personal</p>
+</header>
+<main>
+<section>
+<h2>🙋 Sobre mí</h2>
+<p>
+            Yo soy un estudiante del Centro María Espínola de Sandú,
+            tengo 14 años y en el futuro me gustaría estudiar alguna
+            carrera que tenga que ver con el medio ambiente o algo
+            sobre eficiencia energética.
+
+            Actualmente me gusta escribir, dibujar o incluso leer.
+        </p>
+</section>
+<section>
+<h2>🎨 Mis intereses</h2>
+<div class="imagenes">
+<img alt="Tecnología" data-alt="Escritura y dibujo" data-local="assets/art.svg" data-public="https://upload.wikimedia.org/wikipedia/commons/a/a6/Pencil_on_notebook.jpg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://esdac.es/wp-content/uploads/2026/02/Dicen-de-mi-que-soy-un-todoterreno-digital-porque-me-gusta-utilizar-diferentes-12.jpg"/>
+<img alt="Mis intereses" data-alt="Escritura y dibujo" data-local="assets/art.svg" data-public="https://upload.wikimedia.org/wikipedia/commons/a/a6/Pencil_on_notebook.jpg" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUrB-ziERy1ztYz-GzMFoPKaJaH0c3p2i25WAOaMAkEA&amp;s=10"/>
+</div>
+</section>
+<section class="trabajo">
+<h2>🌎 Mi trabajo ideal</h2>
+<p>
+            Me gustaría tener un trabajo relacionado con
+            la naturaleza, el medio ambiente y la energía.
+        </p>
+<br/>
+<img alt="Energía renovable" data-alt="Energía renovable" data-local="assets/wind.svg" data-public="https://upload.wikimedia.org/wikipedia/commons/c/c3/Sunset_Turbines.jpg" data-stage="public" decoding="async" loading="lazy" referrerpolicy="no-referrer" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Sunset_Turbines.jpg"/>
+</section>
+</main>
+<div class="return-bottom"><a href="index.html">← Volver al menú principal</a></div><footer>
+<p>Hecho por Brandon Da Rosa · Mi biografía personal</p>
+</footer><details class="image-credits"><summary>Créditos de imágenes alternativas</summary><p>Se conservan las imágenes originales cuando cargan. Las referencias alternativas de Wikimedia Commons no representan a los estudiantes. Si no hay conexión se muestran ilustraciones locales.</p><ul><li>Escritura y dibujo: <a href="https://commons.wikimedia.org/wiki/File:Pencil_on_notebook.jpg" rel="noopener noreferrer" target="_blank">Pencil on notebook.jpg</a> · WikiGrower1 · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></li><li>Energía renovable: <a href="https://commons.wikimedia.org/wiki/File:Sunset_Turbines.jpg" rel="noopener noreferrer" target="_blank">Sunset Turbines.jpg</a> · U.S. Geological Survey / Christopher Neel · <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></li></ul></details>
+<script src="assets/images.js"></script></body>
+</html>
