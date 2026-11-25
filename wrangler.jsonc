@@ -1,7 +1,7 @@
 {
-  "name": "biografias-sandu",
+  "name": "portafolios",
   "compatibility_date": "2026-11-25",
-  "workers_dev": false,
+  "workers_dev": true,
   "preview_urls": false,
   "assets": {
     "directory": "./public"
